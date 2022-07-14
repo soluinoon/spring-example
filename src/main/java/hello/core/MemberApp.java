@@ -7,7 +7,9 @@ import hello.core.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        // MemberService memberService = new MemberServiceImpl();
+        MemberService memberService = appConfig.memberService();
         // 롱타입이여서 L붙인 것. 없으면 컴파일 오류남
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
